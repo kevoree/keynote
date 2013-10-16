@@ -1,0 +1,143 @@
+/*@import url(fonts.css);*/
+/*@import url(../reset/reset.css);*/
+
+body {
+    counter-reset: paging;
+}
+
+details {
+    display: none;
+}
+
+/* Slide
+------------------------------- */
+.slide {
+    width: 784px;
+    height: 569px;
+}
+
+.slide:after {
+    content: counter(paging, decimal-leading-zero);
+    /*line-height: 1;*/
+}
+
+/* Lists */
+.slide ol,
+.slide ul {
+    counter-reset: list;
+}
+
+/* Slide */
+.list .slide {
+    position: relative;
+    float: left;
+    margin: 0 -432px -220px 0;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+.list .slide:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 512px;
+    height: 320px;
+    border-radius: 2px;
+    content: '';
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
+}
+
+.list .slide:after {
+    bottom: -100px;
+    left: 120px;
+}
+
+.list .slide .next.collapse> *:not(span) {
+    display: none;
+}
+
+/* slideMode
+------------------------------- */
+.slideMode {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    margin: -320px 0 0 -512px;
+    width: 1024px;
+    height: 640px;
+}
+
+/*.slideMode .caption {
+    display: none;
+}*/
+
+.slideMode .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.slideMode .slide:target {
+    visibility: visible;
+}
+
+/* Next Lists */
+.slideMode .slide .next,
+.slideMode .slide .next > * {
+    opacity: 0;
+}
+
+.slideMode .slide .next.active,
+.slideMode .slide .next.active > :not(.next) {
+    opacity: 1;
+}
+
+.slideMode .slide .next.active.collapse,
+.slideMode .slide .next.active.collapse > *:not(span) {
+    opacity: 1;
+}
+
+.slideMode .slide .next.active.collapse.collapsed> *:not(span) {
+    display: none;
+}
+
+/* Progress */
+.slideMode .progress {
+    position: absolute;
+    right: 118px;
+    bottom: 15px;
+    left: 118px;
+}
+
+.slideMode .progress div {
+    width: 0;
+    height: 10px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    background: rgba(177, 177, 177, 0.4);
+    -webkit-transition: width 0.2s linear;
+    -moz-transition: width 0.2s linear;
+    -ms-transition: width 0.2s linear;
+    -o-transition: width 0.2s linear;
+    transition: width 0.2s linear;
+}
