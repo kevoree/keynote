@@ -1,4 +1,4 @@
-function Preser() {
+function Keynote() {
 
     var url = window.location;
     var body = document.body;

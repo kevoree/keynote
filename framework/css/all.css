@@ -1,0 +1,8 @@
+@import url("reset.css") all;
+@import url("print.css") print;
+@import url("screen.css") screen;
+
+@import url("themes/default/default.css") all;
+@import url("themes/default/fonts.css") all;
+@import url("themes/default/default.print.css") print;
+@import url("themes/default/default.screen.css") screen;
