@@ -21,6 +21,12 @@ include('framework/js/plugins/websocket.js');
 
 jQuery(document).ready(function () {
             var ks = new Keynote();
+			var mode = ks.getMode();
+			if (mode === "frame") {
+				new frame(ks).activate();
+				new KNotesSlave(ks).activate();
+				new KSlideCountSlave(ks).activate();
+			}
 		    new IncludePlugin(ks).activate();
 		    new H2List(ks, 5).activate();
 		    new KKeyboard(ks).activate();
